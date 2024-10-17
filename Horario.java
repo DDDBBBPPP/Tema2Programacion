@@ -5,7 +5,7 @@ public class Horario {
         String bd = "\033[32mBBDD\033[0m";
         String dig = "\033[34mDigitalización\033[0m";
         String sos = "\033[33mSostenibilidad\033[0m";
-        String lm = "\033[mLeng de Marcas\033[0m";
+        String lm = "\033[37mLeng de Marcas\033[0m";
         String si = "\033[36mSistemas\033[0m";
         String ipe = "\033[mEmpleabiliad\033[0m";
         System.out.println("*----------------------------------------------------------------------------------------------*");
