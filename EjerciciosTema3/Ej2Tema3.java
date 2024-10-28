@@ -14,6 +14,6 @@ public class Ej2Tema3 {
 
         System.out.printf("%.2f euros son %d pesetas\n", euros, pesetas);
         // Para iniciar constantes, en mayusucla todo y separado por barras bajas las palabras. Snake_case. DENTRO DE LA CLASE Y FUERA DEL MAIN
-        // Por ejemplo "private static final float CAMBIO = 166.386f;"
+        // Por ejemplo "private o public static final float CAMBIO = 166.386f;"
     }
 }
