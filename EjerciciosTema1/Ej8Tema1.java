@@ -6,7 +6,7 @@ public class Ej8Tema1 {
         System.out.printf("*********\n");
         System.out.printf("%2s %5s\n", "*", "*");
         System.out.printf("%3s %3s\n", "*", "*");
-        System.out.printf("%4s %1s\n", "*", "*");
+        System.out.printf("%4s %s\n", "*", "*");
         System.out.printf("%5s", "*");
     }
 }
