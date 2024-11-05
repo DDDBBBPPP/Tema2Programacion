@@ -24,16 +24,16 @@ public class Ejercicio23 {
         }else{
 
             calculo = altura*anchura/100;
-            System.out.printf("Bandera de %.0f cm cuadrados: %.2f $\n", altura*anchura, calculo );
+            System.out.printf("Bandera de %05.0f cm %-13s %7.2f $\n",  altura*anchura,"cuadrados:", calculo );
             if(bordado.equals("s")){
                 calculo = calculo + escudo + 3.25f;
-                System.out.printf("Con escudo: %.2f $\n", escudo);
+                System.out.printf("%-33s %7.2f $\n", "Con escudo:", escudo);
             }else{
                 calculo = calculo + 3.25f;
-                System.out.printf("Sin escudo: %.2f $\n", 0.0f);
+                System.out.printf("%-33s %7.2f $\n", "Sin escudo:", 0.0f);
             }
-            System.out.printf("Gastos de envío: %.2f $\n", 3.25);
-            System.out.printf("Total: %.2f\n",calculo );
+            System.out.printf("%-33s %7.2f $\n","Gastos de envío:",  3.25);
+            System.out.printf("%-33s %7.2f $\n", "Total:",calculo );
 
 
         }
