@@ -25,8 +25,21 @@ public class Ejercicio17 {
                         System.out.print(" ");
                     }
                     for (int j = 1; j <= i; j++) {
-                        if(i<=2){
-                            System.out.println(car + " ");
+                        if ((i != altura)) {
+                            if ((j == 1) || (j == i)) {
+                                System.out.print(car + " ");
+                            } else if ((j > 1) && (j < i)) {
+                                System.out.print("  ");
+                            }
+                        } else if (altura == 1) {
+                            System.out.print(car);
+                        } else {
+                            if (j != i) {
+                                System.out.print("" + car + car);
+
+                            } else {
+                                System.out.print(car);
+                            }
                         }
 
                     }
