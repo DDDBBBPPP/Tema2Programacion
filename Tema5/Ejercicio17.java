@@ -3,14 +3,18 @@ package Tema5;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Ejercicio16 {
+public class Ejercicio17 {
     public static void main(String[] args) {
         int altura;
+        char car;
         Scanner sc = new Scanner(System.in);
 
         try {
             System.out.print("Introduzca la altura: ");
             altura = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Introduzca el caracter deseado");
+            car = sc.nextLine().charAt(0);
 
             if (altura <= 0) {
                 System.out.println("Introduzca un número superior a 0 para que la altura tenga sentido.");
@@ -21,10 +25,8 @@ public class Ejercicio16 {
                         System.out.print(" ");
                     }
                     for (int j = 1; j <= i; j++) {
-                        if (i == j) {
-                            System.out.print("*");
-                        } else {
-                            System.out.print("**");
+                        if(i<=2){
+                            System.out.println(car + " ");
                         }
 
                     }
@@ -38,7 +40,6 @@ public class Ejercicio16 {
         } finally {
             sc.close();
         }
-
     }
 
 }
