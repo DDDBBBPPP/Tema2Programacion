@@ -27,7 +27,6 @@ public class Ejercicio18 {
                     if (num % 2 != 0) {
                         contadorImpar++;
                         suma = suma + num;
-                        media = suma / contadorImpar;
 
                     } else {
                         if (num >= maximo) {
@@ -39,15 +38,16 @@ public class Ejercicio18 {
 
             } while (num >= 0);
 
+
             // Salida por pantalla final
             System.out.println("Ha introducido " + contador + " números positivos.");
 
             if (contadorImpar > 0) {
-                System.out.println("La media de los impares es " + media + ".");
+                System.out.println("La media de los impares es " + ((float) suma/contadorImpar) + ".");
             } else {
                 System.out.println("No se han introducido valores impares.");
             }
-            if (maximo != -2) {
+            if (maximo > 0 ) {
                 System.out.println("El máximo de los pares es " + maximo + ".");
 
             } else {

@@ -9,6 +9,8 @@ public class Ejercicio9 {
         int total = 0;
         int ant = 0;
 
+        // SUCESION DE FIBONACCI
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Dime la cantidad de valores Fibonacci que quieres: ");
         n = sc.nextInt();
@@ -31,6 +33,17 @@ public class Ejercicio9 {
             }
         }
         sc.close();
-    }
 
+    }
+    
 }
+
+/* Aquí vamos a hacerlo de forma más óptima.
+int i;
+ * int ant = 0; Primer termino.
+ * int act = 1; ( en mi caso num)
+ * for( i = 1; , i++){
+ * sout (ant + ",  ")
+ *         System.out.print(ant + (i<total)?", ":"\n");
+ * }
+ */
