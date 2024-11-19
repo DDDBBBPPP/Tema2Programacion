@@ -7,7 +7,6 @@ public class Ejercicio18 {
     public static void main(String[] args) {
         int num;
         int maximo = -2;
-        int media = 0;
         int suma = 0;
         int contador = 0;
         int contadorImpar = 0;
