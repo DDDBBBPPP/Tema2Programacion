@@ -2,33 +2,37 @@ package Tema5;
 
 public class Ejercicio45 {
     public static void main(String[] args) {
-        int digito;
-        long numero;
-        long temporal;
+        
+        int digito ;
+        long numero ;
 
-        System.out.print("Introduzca un numero entero: ");
-        numero = Long.parseLong(System.console().readLine());
+        System.out.print("Introduzca un número entero: ") ;
+        numero = Long.parseLong(System.console().readLine()) ;
 
-        // mostrar los digitos que aparecen
-        System.out.print("Digitos que aparecen en el número. ");
-        for (digito = 0; digito <= 9; digito++) {
-
-            temporal = numero;
-
+        // mostrar los dígitos que aparecen
+        System.out.print("Dígitos que aparecen en el número: ") ;
+        for(digito=0; digito <= 9; digito++) {            
+            if (buscarDigito(numero, digito)) { System.out.printf("%d ", digito) ; }
         }
-        if (temporal > 0) {
-            System.out.print(digito + " ");
+        
+        // mostrar los dígitos que no aparecen
+        System.out.print("\nDígitos que no aparecen en el número: ") ;
+        for(digito=0; digito <= 9; digito++) {         
+            if (!buscarDigito(numero, digito)) { System.out.printf("%d ", digito) ; }
         }
-    }
-    // mostrar los digitos que no aparecen
-    System.out.println("Digitos que no aparecen en el número. ");
 
     }
 
-    public static boolean buscarDigito(long numero, int digito){
-        while((numero>0) && digito!=(numero%10)){
-          numero = numero /=10;
+    /**
+     * Comprueba que el dígito indicado forma parte del número. Devuelve TRUE si
+     * lo encuentra; FALSE en otro caso.
+     * @param numero
+     * @param digito
+     * @return
+     */
+    public static boolean buscarDigito(long numero, int digito) {
 
-          return ( numero > 0);
+        while((numero > 0) && (digito!=numero%10)) { numero = numero / 10 ; }        
+        return (numero > 0) ;
     }
 }

@@ -33,7 +33,7 @@ public class Ejercicio40 {
             invertido = invertido/10;
         }
 
-
+// ALGO NO FUNCIONA
         System.out.printf("El numero %d se transforma en %d\n", numAux, invertido);
 
         System.out.printf("Los numeros partidos son el %d y el %d", numA, numB);
