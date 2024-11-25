@@ -36,9 +36,16 @@ public class Ejercicio18 {
         }
         // con un BUCLE VAMOS A DARLE LA VUELTA A UNA CADENA.
         cadena = Integer.toString(num);
-        for(int i=0;i<cadena.length();i++){
-            cadenaInvertida = cadena.charAt(i) + cadenaInvertida;
+        for(int i=cadena.length();i>0;i--){
+            cadenaInvertida = cadenaInvertida +  cadena.charAt(i-1);
+            
         }
+        System.out.println(cadenaInvertida);
+        /* for(int i=0;i<cadena.length();i++){
+            cadenaInvertida = cadena.charAt(i) + cadenaInvertida;
+            
+        }
+        System.out.println(cadenaInvertida); */
         // Después podríamos 
     }
 }
