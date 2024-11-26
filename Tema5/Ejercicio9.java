@@ -38,12 +38,12 @@ public class Ejercicio9 {
     
 }
 
-/* Aquí vamos a hacerlo de forma más óptima.
+/* //Aquí vamos a hacerlo de forma más óptima.
 int i;
- * int ant = 0; Primer termino.
- * int act = 1; ( en mi caso num)
- * for( i = 1; , i++){
- * sout (ant + ",  ")
- *         System.out.print(ant + (i<total)?", ":"\n");
- * }
+ int ant = 0; Primer termino.
+ int act = 1; ( en mi caso num)
+ for( i = 1;i<total, i++){
+  sout (ant + ",  ")
+          System.out.print(ant + (i<total)?", ":"\n");
+  }
  */

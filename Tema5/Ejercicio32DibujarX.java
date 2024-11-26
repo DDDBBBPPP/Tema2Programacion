@@ -23,9 +23,6 @@ public class Ejercicio32DibujarX {
                 }
                 System.out.println("");
             }
-
-
-
         }
         sc.close();
     }
