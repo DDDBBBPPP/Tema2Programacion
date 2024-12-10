@@ -9,16 +9,11 @@ public class Ejercicio25 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Introduce el numero a hacer factorial: ");
         num = sc.nextInt();
-        if (num == 0) {
-            System.out.println("El factorial es 1.");
-        } else {
-
             for (; num >= 1; num--) {
                 fact = num * fact;
 
             }
             System.out.println(fact);
-        }
         sc.close();
     }
 }
