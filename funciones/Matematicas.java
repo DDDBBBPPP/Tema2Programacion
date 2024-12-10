@@ -2,10 +2,11 @@ package funciones;
 
 public class Matematicas {
     public static void main(String[] args) {
-        int num = 565005;
-        int dig = 7;
+        int num = 12345678;
+        int dig = 7
+        ;
         
-        System.out.println(pegaPorDelante(num, dig));
+        System.out.print(digitoEnPos(num, dig));
     }
 /**
  * Voltea el número
@@ -125,7 +126,7 @@ public static long voltea(long numero) {
  */
     public static int digitoEnPos(int num, int posicion){
         int longitud = digitos(num);
-        for(int i = 1; i<longitud - posicion;i++){
+        for(int i = 1; i<longitud - posicion ;i++){
             num/=10;
         }
         return num%10;
