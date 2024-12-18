@@ -13,7 +13,7 @@ public class Ejercicio11PrimosDelante {
         System.out.println("Introduzca 10 números y pulse INTRO cada vez:");
 
         //Leemos los datos del array
-        FuncionesArray.leerArregloEntero(original);
+        FuncionesArray.leerArregloInt(original);
         
         System.out.println("Array original:");
         //Pintamos la primera tabla

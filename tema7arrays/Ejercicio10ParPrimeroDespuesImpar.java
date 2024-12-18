@@ -50,10 +50,8 @@ public class Ejercicio10ParPrimeroDespuesImpar {
         for (i = 0; i < 20; i++) {
             System.out.print(modificado[i] + " ");
         }
-
-        //2 Soluciones. La primera solucion con un mismo array y de un recorrido, con dos indices, y sin importar orden
-        //Poner los pares al principio y los impares al final. indices i y f.
-        
+ //2 Soluciones. La primera solucion con un mismo array y de un recorrido, con dos indices, y sin importar orden
+        //Poner los pares al principio y los impares al final. indices i y f
 
     }
 }
