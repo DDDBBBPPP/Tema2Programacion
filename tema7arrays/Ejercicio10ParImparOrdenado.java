@@ -9,7 +9,6 @@ public class Ejercicio10ParImparOrdenado {
         int f;
         int[] fraccionPar;
         int[] fraccionImpar;
-        int[] nuevo;
         int[] original = new int[20];
         int[] modificado = new int[20];
 
@@ -47,22 +46,27 @@ public class Ejercicio10ParImparOrdenado {
         FuncionesArray.mostrarArrayInt(fraccionPar);
 
         fraccionImpar = FuncionesArray.miniArrayInt(original, f, original.length-1);
-        System.out.println("Fraccion par: ");
+        System.out.println("Fraccion impar: ");
         FuncionesArray.mostrarArrayInt(fraccionImpar);
 
         //Ordenamos cada array
+        FuncionesArray.ordenarArray(fraccionPar);
+        System.out.println("Fraccion par: ");
+        FuncionesArray.mostrarArrayInt(fraccionPar);
+        FuncionesArray.ordenarArray(fraccionImpar);
+        System.out.println("Fraccion impar: ");
+        FuncionesArray.mostrarArrayInt(fraccionImpar);
 
 
-
-        //Juntamos los arrays. // NO FUNCIONA.
-        nuevo = new int[fraccionPar.length + fraccionImpar.length];
+        //Juntamos los arrays.
+       /*  nuevo = new int[fraccionPar.length + fraccionImpar.length];//AL meterlo en la funcion necesita tener ya una longitud.
         nuevo = FuncionesArray.juntarArray(nuevo, fraccionPar, fraccionImpar);
         System.out.println("NUEVO NUEVO NUEVO");
         FuncionesArray.mostrarArrayInt(nuevo);
+ */
 
-
-
-
+        //Juntamos los arrays
+        FuncionesArray.juntarArray(original, fraccionPar, fraccionImpar);
         
         
         //Lo mostramos

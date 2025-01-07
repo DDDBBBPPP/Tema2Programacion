@@ -30,6 +30,18 @@ public class FuncionesArray {
         }
         System.out.println();
     }
+
+/**
+ * Mostrar array String
+ * @param numeros
+ */
+    public static void mostrarArray(String[] numeros){
+
+        for(int i = 0;i<numeros.length;i++){
+            System.out.print(numeros[i] + " ");
+        }
+        System.out.println();
+    }
 /**
  * Copiar un array entero pasando primero el array donde lo quiero tener.
  * @param num1
@@ -84,25 +96,64 @@ public class FuncionesArray {
         return fraccion;
     }
 
+
+/**
+ * Sacamos de un array otro con una fraccion de él. Pero de strings
+ * @param numeros
+ * @param p1
+ * @param p2
+ * @return
+ */
+    public static String[] miniArray(String[] numeros, int p1, int p2){
+        int i;
+        String[] fraccion = new String[(p2 - p1) +1];
+
+        for(i = 0;i<fraccion.length;i++){
+            fraccion[i] = numeros[p1];
+            p1++;
+        }
+        return fraccion;
+    }
+
     /**
-     * Ordenar los datos de un Array.
+     * Ordenar los datos de un Array de menor a mayor
      * @param numeros
      */
     public static void ordenarArray(int[]numeros){
+        int vueltas; // Las vueltas necesarias.
+        int i = 0;  //Índice por detrás
+        int f; // El índice que va delante.
+        int aux; // Para ir guardando valores.
+        int contador = 0; // para que pare de hacer vueltas si está ordenado
 
+        for(vueltas = 0; vueltas<numeros.length;vueltas++){
+            for(f=1;f<numeros.length;f++){
+                if(numeros[i]>numeros[f]){
+                    aux = numeros[f];
+                    numeros[f] = numeros[i];
+                    numeros[i] = aux;
+                    contador++;
+                }
+                i++;  
+            }
+            if(contador==0){
+                vueltas = numeros.length;
+            }
+            contador = 0;
+            i=0;
+        }
     }
 
 
 /**
- * 
+ * AL meterlo en la funcion necesita tener ya una longitud.
  * @param arrayCompleto
  * @param mini1
  * @param mini2
  */
-    public static int[] juntarArray(int[] arrayCompleto, int[] mini1, int[] mini2){
+    public static void juntarArray(int[] arrayCompleto, int[] mini1, int[] mini2){
         int i;
-        arrayCompleto = new int[mini1.length + mini2.length];
-        int f = mini1.length;
+        int f = 0;
 
         for(i = 0;i<arrayCompleto.length;i++){
             if(i<mini1.length){
@@ -113,7 +164,39 @@ public class FuncionesArray {
             }
         }
 
-        return arrayCompleto;
+    }
+
+/**
+ * Rellena el array de numeros random en el rango que le digas.
+ * @param numeros
+ * @param rango
+ */
+    public static void rellenarRandom(int[] numeros, int rango){
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = (int) (Math.random() * rango);
+        }
+    }
+
+
+
+/**
+ * Juntar arrays string
+ * @param arrayCompleto
+ * @param mini1
+ * @param mini2
+ */
+    public static void juntarArrayString(String[] arrayCompleto, String[] mini1, String[] mini2){
+        int i;
+        int f = 0;
+
+        for(i = 0;i<arrayCompleto.length;i++){
+            if(i<mini1.length){
+                arrayCompleto[i] = mini1[i]; 
+            }else{
+                arrayCompleto[i] = mini2[f];
+                f++;
+            }
+        }
 
     }
 
