@@ -126,7 +126,7 @@ public class FuncionesArray {
         int aux; // Para ir guardando valores.
         int contador = 0; // para que pare de hacer vueltas si está ordenado
 
-        for(vueltas = 0; vueltas<numeros.length;vueltas++){
+        for(vueltas = 0; vueltas<numeros.length-1;vueltas++){
             for(f=1;f<numeros.length;f++){
                 if(numeros[i]>numeros[f]){
                     aux = numeros[f];

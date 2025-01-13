@@ -11,7 +11,6 @@ public class Ejercicio26AnteriorSleep {
         int i;
         int j;
         int suma = 0;
-        Thread hilo = new Thread();
     
         
         //Rellenamos el array

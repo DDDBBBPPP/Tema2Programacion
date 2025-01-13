@@ -1,7 +1,6 @@
 package tema7arrays;
 
 public class Navidad {
-    public class VectorLib {
         public static int[] rellenar(int[] vector, int min, int max){
     
             int num;
@@ -192,23 +191,5 @@ public class Navidad {
             return vector;
         }
     
-        public static int[] selectionSort(int[] vector, boolean debug){
-    
-            int aux;
-            boolean leave = false;
-    
-            while(!leave){
-                leave = true;
-    
-                
-    
-                if(debug){
-                    mostrarVector(vector);
-                }
-            }
-    
-            return vector;
-        }
-    }
     
 }
