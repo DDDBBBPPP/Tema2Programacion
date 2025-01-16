@@ -1,6 +1,6 @@
-package Tema5;
+package tema7arrays;
 
-public class ForEachEnJava {
+public class ForEach {
     public static void main(String[] args) {
 
         int[] numeros = new int[31];
