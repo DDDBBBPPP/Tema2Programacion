@@ -9,7 +9,7 @@ public class Probar {
         System.out.println(operacion.invierte());
         System.out.println(operacion.multiplicaFrac(3,5));
         System.out.println(operacion.divideFrac(3,5));
-        System.out.println(gordo.simplifica);
+        System.out.println(gordo.simplifica());
 
 
 
