@@ -5,6 +5,10 @@ public class Fraccion {
     private int numerador;
     private int denominador;
 
+    public Fraccion(){
+
+    }
+
     public Fraccion(int num, int den) {
         this.numerador = num;
         this.denominador = den;
@@ -15,14 +19,10 @@ public class Fraccion {
      * 
      * @return
      */
-    public String invierte() {
-        int arriba;
-        int abajo;
+    public Fraccion invierte() {
+        Fraccion resultado = new Fraccion(this.denominador * (-1),this.numerador * (-1));
 
-        arriba = this.denominador * (-1);
-        abajo = this.numerador * (-1);
-
-        return this + "^-1 = " + arriba + "/" + abajo;
+        return resultado;
     }
 
     /**
@@ -32,10 +32,8 @@ public class Fraccion {
      * @param den
      * @return
      */
-    public String multiplicaFrac(int num, int den) {
-        int arriba = this.numerador * num;
-        int abajo = this.denominador * den;
-        return this + "x " + num + "/" + den + " = " + arriba + "/" + abajo;
+    public Fraccion multiplica(Fraccion ope) {
+        return new Fraccion(numerador * ope.numerador,this.denominador * ope.denominador);
     }
 
     /**
@@ -44,10 +42,8 @@ public class Fraccion {
      * @param num
      * @return
      */
-    public String multiplica(int num) {
-        int arriba = this.numerador * num;
-        int abajo = this.denominador * num;
-        return this + "x " + num + " = " + arriba + "/" + abajo;
+    public Fraccion multiplica(int num) {
+        return new Fraccion(this.numerador*num,this.denominador);
     }
 
     /**
@@ -57,10 +53,8 @@ public class Fraccion {
      * @param den
      * @return
      */
-    public String divideFrac(int num, int den) {
-        int arriba = this.numerador * den;
-        int abajo = this.denominador * num;
-        return this + "x " + num + "/" + den + " = " + arriba + "/" + abajo;
+    public Fraccion divideFrac(Fraccion operando) {
+        return new Fraccion(this.numerador * operando.denominador, this.denominador * operando.numerador);
     }
 
     /**
@@ -68,7 +62,8 @@ public class Fraccion {
      * 
      * @return
      */
-    public String simplifica() {
+    public Fraccion simplifica() {
+        Fraccion resultado = new Fraccion();
         int arriba = this.numerador;
         int abajo = this.denominador;
         int i = 2;
@@ -92,11 +87,12 @@ public class Fraccion {
                     }
                     contador = 2;
                 }while(!primo);
+                primo = false;
         }
+        resultado.numerador = arriba;
+        resultado.denominador = abajo;
 
-        primo = false;
-
-        return this + "= " + arriba + "/" + abajo;
+        return resultado;
     }
 
     @Override
