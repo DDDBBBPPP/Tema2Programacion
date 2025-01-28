@@ -1,6 +1,7 @@
 package tema9poo.pila;
 
 public class Pila {
+     //LIFO LAST IN FIRST OUT.
     // Constant
     private static final int DEFECTO = 50;
 
