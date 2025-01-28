@@ -1,13 +1,12 @@
 package tema9poo.ej5;
 
-public class Coche extends Vehiculo{
+public class Coche extends Vehiculo {
 
-
-    public Coche(){
+    public Coche() {
         super();
     }
 
-    public void vacilar(){
+    public void vacilar() {
         System.out.println("Estoy quemando rueda");
     }
 
