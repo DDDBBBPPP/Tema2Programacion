@@ -53,7 +53,11 @@ public class Cola {
             throw new IllegalStateException("La cola está vacía");
         }
     }
-
+    /**
+     * En este ejemplo en concreto, PUEDES USAR NoSuchElementException!!
+     * HAY QUE LANZAR EXCEPCION CUANDO PUEDE QUE NO SE DEVUELVA EL TIPO, PQ NO HAYA.
+     * @return
+     */
     public int frente() {
         if (!esVacia()) {
             return monton[inicio];
