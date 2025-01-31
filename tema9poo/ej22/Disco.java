@@ -13,9 +13,15 @@ public class Disco {
 
     }
 
-    public void rellenar(){
-        System.out.println();
+    public Disco(String cod, String aut, String tit, String gen, int dur){
+        this.codigo = cod;
+        this.autor = aut;
+        this.titulo = tit;
+        this.genero = gen;
+        this.duracion = dur;
     }
+
+    
 
     @Override
     public String toString() {

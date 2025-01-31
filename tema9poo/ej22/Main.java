@@ -5,8 +5,13 @@ public class Main {
     public static final int MAXIMO = 10;
     public static void main(String[] args) {
         
-        Disco[] dicos = new Disco[10];
+        Disco[] discos = new Disco[10];
         int opcion = 0;
+
+        discos[0] = new Disco("G4343j", "Tumbao", "Primer disco", "Música Triste", 45);
+        discos[2] = new Disco("123144", "Jaime Moicano", "Otro disco", "Alegre", 10);
+        discos[4] = new Disco("LKH73H", "Sara Oteca", "Buen disco", "Chunda Chunda", 5);
+
 
 
         try{
@@ -37,14 +42,17 @@ public class Main {
                     break;
                 }
                 
-                xc 
+               
             
+            }while(opcion!=5);
             
-            
-        }catch(){
+        }catch(Exception e){
+
+            System.out.println("Haz las cosas bien por favor.");
         }
 
-    }
+    
 
 }
 
+}
