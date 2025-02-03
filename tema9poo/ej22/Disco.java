@@ -21,7 +21,45 @@ public class Disco {
         this.duracion = dur;
     }
 
-    
+    public String getCodigo(){
+        return this.codigo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public int getDuracion() {
+        return duracion;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
 
     @Override
     public String toString() {
