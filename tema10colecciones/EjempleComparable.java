@@ -1,12 +1,13 @@
 package tema10colecciones;
 import tema10colecciones.clases.Gato;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class EjempleComparable {
 
     public static void main(String[] args) {
-        
+        ArrayList<String> listado=new ArrayList<String>(Arrays.asList("Paco","Antonio","Migue")); // Así ,metemos del tiron
         ArrayList<Gato> gatetes = new ArrayList<Gato>();
         gatetes.add(new Gato("Garfield","naranja",5));
         gatetes.add(new Gato("Silvestre","negro",10));
