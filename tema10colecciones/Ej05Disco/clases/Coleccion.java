@@ -3,7 +3,6 @@ package tema10colecciones.Ej05Disco.clases;
 import java.util.ArrayList;
 
 public class Coleccion {
-    MIRAR QUE ESTÁ MAL.
 
     private ArrayList<Disco> coleccion ;     // colección de discos
 
@@ -20,9 +19,7 @@ public class Coleccion {
      * Vacía la colección de discos
      */
     private void vaciar() {
-        for(int i=0; i < this.coleccion.size(); i++) {
             this.coleccion.clear();
-        }
     }
 
     /**
@@ -63,9 +60,13 @@ public class Coleccion {
      * @param disco
      */
     public boolean insertar(Disco disco) {
-
-        return true;
+        if (this.buscarPosicion(disco.getCodigo()) == -1) {  // Verifica que no exista
+            this.coleccion.add(disco);
+            return true;
+        }
+        return false;  // Si ya existe, no lo agrega
     }
+    
 
     /**
      * Elimina el disco indicado y devolvemos true; en otro caso,
@@ -101,6 +102,7 @@ public class Coleccion {
         String dato = System.console().readLine() ;
         return dato.isEmpty() ? valorActual : dato;
     }
+    
 
     /**
      * Modificamos el disco que se nos indica 
