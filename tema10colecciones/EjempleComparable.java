@@ -16,10 +16,10 @@ public class EjempleComparable {
         gatetes.add(new Gato("Salem","negro",150));
         gatetes.add(new Gato("Gato con Botas","naranja",7));
 
-
-        for(Gato item : gatetes){
+        System.out.println(gatetes);
+      /*   for(Gato item : gatetes){
             System.out.println(item);
-        }
+        } */
         //No puedes ordenar objetos.
        // Collections.sort(gatetes);
 
