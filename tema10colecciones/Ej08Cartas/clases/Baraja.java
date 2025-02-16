@@ -38,7 +38,7 @@ public class Baraja {
                     posible = true;
                 }
         }
-        return true;
+        return posible;
     }
 
     
