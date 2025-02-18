@@ -11,6 +11,9 @@ public class Colores {
         System.out.println("telita");
         System.out.println("Piolin");
         System.out.println("Aydt Santa Claus");
+
+        System.out.println("\n\nHOLA GUAPETONES");
+        //System.out.println("\u001b[2J\u001b[H");
     }
     
 }

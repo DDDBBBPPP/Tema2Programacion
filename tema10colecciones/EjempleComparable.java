@@ -17,6 +17,7 @@ public class EjempleComparable {
         gatetes.add(new Gato("Gato con Botas","naranja",7));
 
         System.out.println(gatetes);
+     
       /*   for(Gato item : gatetes){
             System.out.println(item);
         } */

@@ -32,7 +32,7 @@ public class EjemploConjuntos {
          System.out.println("Datos");
          System.out.println();
          mostrar(datos);
-
+        
 
         // NECESITAMOS EL CASTING // PENDIENTE DE SABER PQ NO VALE.
      /*  for(String item: palabras.toArray()){

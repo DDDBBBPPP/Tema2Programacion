@@ -20,9 +20,11 @@ public class Ej02 {
         maximo = valores.get(0);
         minimo = valores.get(0);
         // PRIMERO LO MOSTRAMOS
+
         for(Integer item: valores){
             System.out.print(item + " ");
         }
+
         //
         for(i = 0 ; i<valores.size();i++){
           suma +=  valores.get(i);
