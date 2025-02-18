@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
-import tema10colecciones.clases.Empleado ;
+import tema10colecciones.clases.Empleado;
 
 public class EjemploEmpleado {
 
