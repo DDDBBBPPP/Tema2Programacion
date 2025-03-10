@@ -13,8 +13,6 @@ public class EjercicioCLase {
         } else if (args.length == 1) {
             if (args[0].equalsIgnoreCase("ayuda")) {
                 System.out.println("Introduzca el nombre del archivo, y P,L o C.");
-            } else if (args[0].equalsIgnoreCase("nombre")) {
-                System.out.println("Necesita un segundo argumento");
             } else {
                 System.out.println("Introduzca el nombre del archivo, y P,L o C.");
             }
@@ -22,12 +20,13 @@ public class EjercicioCLase {
         } else if (args.length == 2) {
             if (args[0].equalsIgnoreCase("ayuda")) {
                 System.out.println("Introduzca el nombre del archivo, y P,L o C.");
-            } else if (args[0].equalsIgnoreCase("nombre")) {
+            }
 
+            else {
                 if (args[1].equalsIgnoreCase("L")) {
                     try {
 
-                        System.out.println("Total líneas del archivo: " + leerArchivo(args[0], args[1]));
+                        System.out.println("Total líneas del archivo: " + leerArchivo(args[0], args[1].toLowerCase()));
                     } catch (FileNotFoundException fnfe) {
                         System.out.println("El archivo " + args[0] + " no está en la ruta especificada.");
                     }
@@ -36,7 +35,7 @@ public class EjercicioCLase {
 
                     try {
 
-                        System.out.println("Total palabras del archivo: " + leerArchivo(args[0], args[1]));
+                        System.out.println("Total palabras del archivo: " + leerArchivo(args[0], args[1].toLowerCase()));
                     } catch (FileNotFoundException fnfe) {
                         System.out.println("El archivo " + args[0] + " no está en la ruta especificada.");
                     }
@@ -45,7 +44,8 @@ public class EjercicioCLase {
 
                     try {
 
-                        System.out.println("Total caracteres del archivo: " + leerArchivo(args[0], args[1]));
+                        System.out.println(
+                                "Total caracteres del archivo: " + leerArchivo(args[0], args[1].toLowerCase()));
                     } catch (FileNotFoundException fnfe) {
                         System.out.println("El archivo " + args[0] + " no está en la ruta especificada.");
                     }
@@ -53,8 +53,6 @@ public class EjercicioCLase {
                 } else {
                     System.out.println("Introduzca P,L o C");
                 }
-            } else {
-                System.out.println("Introduzca el nombre del archivo, y P,L o C.");
             }
         } else {
             System.out.println("Introduzca solo los argumentos que tocan.");
@@ -63,11 +61,12 @@ public class EjercicioCLase {
     }
 
     public static int leerArchivo(String nombre, String accion) throws FileNotFoundException {
-        int resultado;
-        String[] palabras;
+        int resultado = 0;
+        String[] palabras = new String[1000];
+        int i = 0;
         int totalLineas = 0;
         int totalPalabras = 0;
-        int totalCaracteres;
+        int totalCaracteres = 0;
 
         try {
             FileReader archivo = new FileReader(nombre);
@@ -78,13 +77,32 @@ public class EjercicioCLase {
             while (linea != null) {
                 totalLineas++;
 
+                palabras = linea.split(" ");
+
+                while (!palabras[i].equals("")) {
+                    i++;
+                    totalPalabras++;
+                }
+                totalCaracteres += linea.length();
+
                 linea = br.readLine();
             }
             br.close();
         } catch (IOException ioe) {
             System.out.println("Tieso");
         }
+        switch (accion) {
+            case "l":
+                resultado = totalLineas;
+                break;
+            case "p":
+                resultado = totalPalabras;
+                break;
+            case "c":
+                resultado = totalCaracteres;
+                break;
 
+        }
         return resultado;
     }
 }
