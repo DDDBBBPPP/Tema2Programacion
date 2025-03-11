@@ -7,102 +7,66 @@ import java.io.IOException;
 
 public class EjercicioCLase {
     public static void main(String[] args) {
-
         if (args.length == 0) {
             System.out.println("Introduzca argumentos.");
         } else if (args.length == 1) {
             if (args[0].equalsIgnoreCase("ayuda")) {
-                System.out.println("Introduzca el nombre del archivo, y P,L o C.");
+                System.out.println("Uso: <nombre_del_archivo> [P | L | C]");
             } else {
-                System.out.println("Introduzca el nombre del archivo, y P,L o C.");
+                System.out.println("Falta el segundo argumento: P, L o C.");
             }
-
         } else if (args.length == 2) {
             if (args[0].equalsIgnoreCase("ayuda")) {
-                System.out.println("Introduzca el nombre del archivo, y P,L o C.");
-            }
-
-            else {
-                if (args[1].equalsIgnoreCase("L")) {
-                    try {
-
-                        System.out.println("Total líneas del archivo: " + leerArchivo(args[0], args[1].toLowerCase()));
-                    } catch (FileNotFoundException fnfe) {
-                        System.out.println("El archivo " + args[0] + " no está en la ruta especificada.");
+                System.out.println("Uso: <nombre_del_archivo> [P | L | C]");
+            } else {
+                String opcion = args[1].toLowerCase();
+                try {
+                    int resultado = leerArchivo(args[0], opcion);
+                    switch (opcion) {
+                        case "l":
+                            System.out.println("Total líneas del archivo: " + resultado);
+                            break;
+                        case "p":
+                            System.out.println("Total palabras del archivo: " + resultado);
+                            break;
+                        case "c":
+                            System.out.println("Total caracteres del archivo: " + resultado);
+                            break;
+                        default:
+                            System.out.println("Introduzca P, L o C.");
                     }
-
-                } else if (args[1].equalsIgnoreCase("P")) {
-
-                    try {
-
-                        System.out.println("Total palabras del archivo: " + leerArchivo(args[0], args[1].toLowerCase()));
-                    } catch (FileNotFoundException fnfe) {
-                        System.out.println("El archivo " + args[0] + " no está en la ruta especificada.");
-                    }
-
-                } else if (args[1].equalsIgnoreCase("C")) {
-
-                    try {
-
-                        System.out.println(
-                                "Total caracteres del archivo: " + leerArchivo(args[0], args[1].toLowerCase()));
-                    } catch (FileNotFoundException fnfe) {
-                        System.out.println("El archivo " + args[0] + " no está en la ruta especificada.");
-                    }
-
-                } else {
-                    System.out.println("Introduzca P,L o C");
+                } catch (FileNotFoundException fnfe) {
+                    System.out.println("El archivo " + args[0] + " no está en la ruta especificada.");
+                } catch (IOException ioe) {
+                    System.out.println("Error al leer el archivo.");
                 }
             }
         } else {
             System.out.println("Introduzca solo los argumentos que tocan.");
         }
-
     }
 
-    public static int leerArchivo(String nombre, String accion) throws FileNotFoundException {
-        int resultado = 0;
-        String[] palabras = new String[1000];
-        int i = 0;
-        int totalLineas = 0;
-        int totalPalabras = 0;
-        int totalCaracteres = 0;
+    public static int leerArchivo(String nombre, String accion) throws IOException {
+        int totalLineas = 0, totalPalabras = 0, totalCaracteres = 0;
 
-        try {
-            FileReader archivo = new FileReader(nombre);
-            BufferedReader br = new BufferedReader(archivo);
-
-            String linea = br.readLine();
-
-            while (linea != null) {
+        try (BufferedReader br = new BufferedReader(new FileReader(nombre))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
                 totalLineas++;
-
-                palabras = linea.split(" ");
-
-                while (!palabras[i].equals("")) {
-                    i++;
-                    totalPalabras++;
-                }
+                totalPalabras += linea.split("\\s+").length; // Divide correctamente por espacios
                 totalCaracteres += linea.length();
-
-                linea = br.readLine();
             }
-            br.close();
-        } catch (IOException ioe) {
-            System.out.println("Tieso");
         }
+
         switch (accion) {
             case "l":
-                resultado = totalLineas;
-                break;
+                return totalLineas;
             case "p":
-                resultado = totalPalabras;
-                break;
+                return totalPalabras;
             case "c":
-                resultado = totalCaracteres;
-                break;
-
+                return totalCaracteres;
+            default:
+                throw new IllegalArgumentException("Opción inválida. Use 'P', 'L' o 'C'.");
         }
-        return resultado;
     }
 }
