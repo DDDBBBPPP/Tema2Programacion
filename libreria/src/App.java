@@ -1,6 +1,8 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class App {
     // datos de accesos al motor de bases de DATOS(MariaDB,MySQL)
@@ -20,7 +22,28 @@ public class App {
 
             Connection conexion = DriverManager.getConnection(URL, USUARIO, PASSWORD);
             if (conexion != null) {
+                //MENSAJE DE CONEXION
                 System.out.println("Conexion realizada con éxito");
+
+                
+                
+                //Lanzar la consulta
+                
+                //1.crear sentencia sqll
+                String sql = "SELECT * FROM libro ORDER BY paginas;";
+                Statement consulta = conexion.createStatement();
+                ResultSet resultado =  consulta.executeQuery(sql);
+                //Podemos recorrerlo.
+                //Asi se recorre con el metodo next.
+                while(resultado.next()){
+                    System.out.printf("Titulo %s, Autor %s, Numero de Páginas %d\n",resultado.getString("titulo"),
+                                    resultado.getString("autor"),resultado.getInt("paginas"));
+                    System.out.println("----------------------------------------------------------------------------");
+                                                            
+                }
+
+
+                //cERRAMOS LA CONEXION
                 conexion.close();
             } else {
                 System.out.println("No se ha podido conectar.");
